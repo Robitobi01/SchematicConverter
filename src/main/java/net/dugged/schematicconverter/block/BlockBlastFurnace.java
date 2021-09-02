@@ -1,0 +1,22 @@
+package net.dugged.schematicconverter.block;
+
+public class BlockBlastFurnace extends Block {
+	protected static final BlockProperty facing = new BlockProperty("facing", new String[]{"north", "south", "west", "east"});
+	protected static final BlockProperty lit = new BlockProperty("lit", new String[]{"false", "true"});
+
+	public BlockBlastFurnace() {
+		super("blast_furnace");
+		blockProperties.add(facing);
+		blockProperties.add(lit);
+	}
+
+	@Override
+	public Block getNewBlock() {
+		return this;
+	}
+
+	@Override
+	public Block getOldBlock() {
+		return this;
+	}
+}

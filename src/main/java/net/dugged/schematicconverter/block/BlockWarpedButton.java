@@ -1,0 +1,24 @@
+package net.dugged.schematicconverter.block;
+
+public class BlockWarpedButton extends Block {
+	protected static final BlockProperty face = new BlockProperty("face", new String[]{"floor", "wall", "ceiling"});
+	protected static final BlockProperty facing = new BlockProperty("facing", new String[]{"north", "south", "west", "east"});
+	protected static final BlockProperty powered = new BlockProperty("powered", new String[]{"false", "true"});
+
+	public BlockWarpedButton() {
+		super("warped_button");
+		blockProperties.add(face);
+		blockProperties.add(facing);
+		blockProperties.add(powered);
+	}
+
+	@Override
+	public Block getNewBlock() {
+		return this;
+	}
+
+	@Override
+	public Block getOldBlock() {
+		return this;
+	}
+}

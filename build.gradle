@@ -1,0 +1,23 @@
+gradle.startParameter.showStacktrace = ShowStacktrace.ALWAYS_FULL
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group 'net.dugged'
+version '0.0.1'
+
+repositories {
+    maven { url = 'https://maven.izzel.io/releases' }
+    mavenCentral()
+}
+dependencies {
+    implementation 'io.izzel:nbt:1.1.0'
+    implementation 'com.google.code.gson:gson:2.8.8'
+}
+
+jar.manifest.attributes('Main-Class': 'net.dugged.schematicconverter.Converter')
+//jar.from {
+//    configurations.compileClasspath.filter{ it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
+//    configurations.runtimeClasspath.filter{ it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
+//}
+
